@@ -1,5 +1,5 @@
 import java.util.*;
-public class if_1163 {
+public class if_1164 {
 
 	public static void main(String[] args) {
 		
@@ -10,14 +10,12 @@ public class if_1163 {
 		
 		String result = "";
 		
-		int sum = (a+b+c)/100;
-		if(sum%2 == 0 ) {
-			result = "대박";
-		}else {
-			result = "그럭저럭";
+		if (a <= 170 || b <= 170 || c <= 170) {
+			result ="CRASH";
+		}else if (a>170 || b >170 || c>170){
+			result = "PASS";
 		}
 		System.out.println(result);
-
 	}
 
 }
