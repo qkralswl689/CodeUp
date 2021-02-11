@@ -7,7 +7,7 @@ public class array_1403 {
 		int n = sc.nextInt();
 		int[] arr = new int[n];
 		
-			
+		
 		
 	}
 
