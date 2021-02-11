@@ -3,29 +3,27 @@ public class array_1402 {
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in); 
 		int n = sc.nextInt();
 		int[] arr = new int[n]; // n크기의 배열 arr생성
 		
-		for(int i=0; i<n; i++) { // 입력숫자 n 반복하여 입력받은 값 배열 arr에 값저장
-			arr[i] = sc.nextInt();	
-			 //System.out.println(arr[i]);
+		for(int i=0; i<n;i++) { // i는 0부터 입력받은 n까지 1씩 증가하면서 반복한다
+			arr[i] = sc.nextInt(); // 배열 arr 에  입력받은 i값을 저장한다
 		}
-		
-		for(int j=0; j<arr.length; j++) {
-			for(int k = j+1; k<arr.length; k++) {
-		 		if(arr[j]<arr[k]) { // 뒤의수(k)가 앞의수(j)보다 크면 아래 조건식 실행
-		 			int sum = arr[j]; // sum 에 j값 대입 ,* 변수 sum : 자리이동하는 값 잠깐 저장
-		 			arr[j] = arr[k]; // j값과 k 값이 같으면
-		 			arr[k] = sum; // sum에 k값을 대입한다 (자리가 바뀐다) = > j<k 가 만족될때까지 반복
-		 			
-		 		}
-		 	}
+		int max = arr[0]; // 큰값 비교할 변수 max 선언
+		for(int j=0;j<arr.length; j++) { // j는 0부터 배열의 길이만큼 1씩 증가하며 반복한다
+			for(int k =j+1;k<arr.length; k++) { // k 는 j값+1 부터 배열의 길이만큼 증가하면서 반복한다
+				if(arr[j] < arr[k]) { // 만약에 k(j+1)의 값이 j값보다 크면 
+					max = arr[j]; // 변수 max에 j의 값을 저장하고
+					arr[j] = arr[k]; // j값과 k(j+1)값이 같다면
+					arr[k] = max; // k(j+1)의 값을 변수 max에 저장한다
+					
+				}
+			}
 		}
-		for(int i=0; i<arr.length; i++) { // 저장된 배열을 순차적으로 출력한다
-			System.out.println(arr[i]);
-		}
-		System.out.println();
+		for(int i=0; i<arr.length; i++) { // i는 0부터 배열의 길이만큼 1씩 증가하며 반복한다
+			System.out.print(arr[i]+ " "); // 저장된 변수를 출력한다
+		}System.out.println();
 	}
 
 }
